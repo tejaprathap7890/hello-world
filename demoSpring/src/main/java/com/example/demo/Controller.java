@@ -58,6 +58,7 @@ CustomerDao cd;
 		cd.delete(c);
 		return ResponseEntity.ok().build();
 		/*heell0oo*/
+		/*hello2*/
 	}
 	
 }
