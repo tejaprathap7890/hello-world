@@ -57,6 +57,7 @@ CustomerDao cd;
 		Customer c=cd.findById(custid).get();
 		cd.delete(c);
 		return ResponseEntity.ok().build();
+		/*heell0oo*/
 	}
 	
 }
