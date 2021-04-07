@@ -17,7 +17,7 @@ public class CustomerService {
 	}
 	public Optional<Customer> getCustomerDetails(int id) {
 		
-	return customerDao.findById(id);
+	return customerDao.findById((long) id);
 	}
 	
 }

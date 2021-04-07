@@ -26,7 +26,7 @@ public class Controller {
 CustomerService customerService;
 @Autowired
 CustomerDao cd;
-/*Hii this*/
+
 
 	@PostMapping("/customer")
 	public Customer saveCustomer(@RequestBody Customer customer)
@@ -42,7 +42,7 @@ CustomerDao cd;
 	@PutMapping("customerupdate/{id}")
 	public ResponseEntity<Customer> updateCustomer(@PathVariable(value = "id") int  custid,
 			  @RequestBody Customer customer)  {
-			 Customer cust = cd.findById(custid).get();
+			 Customer cust = cd.findById((long) custid).get();
 			
 
 			cust.setFname(customer.getFname());
@@ -54,12 +54,10 @@ CustomerDao cd;
 	@DeleteMapping("deletecustomer/{id}")
 	public ResponseEntity<Void> deleteEmplotee(@PathVariable(value="id") int custid)
 	{
-		Customer c=cd.findById(custid).get();
+		Customer c=cd.findById((long) custid).get();
 		cd.delete(c);
 		return ResponseEntity.ok().build();
-		/*heell0oo*/
-		/*hello2*/
-		/*hello3*/
+
 	}
 	
 }
